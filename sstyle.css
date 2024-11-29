@@ -1,0 +1,344 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: white;
+    overflow: hidden;
+
+}
+
+
+
+
+
+.header__bg img {
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 100vw; /* Largeur de la fenêtre (viewport) */
+      height: 100vh; /* Hauteur de la fenêtre (viewport) */
+      object-fit: cover;
+      filter: blur(1px); /* Ajoute un flou de 5px */
+
+}
+.image:hover {
+    filter: blur(40px); /* Ajoute un flou de 10px au survol */
+  }
+.loading-screen {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    background-color: #4bedc2;
+    width: 0%;
+    height: 100%;
+}
+/* .title  { 
+    
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.1s; 
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); 
+    }
+    to {
+      opacity: 1;
+      transform: translateY(20p);
+    }
+  } */
+
+
+.load-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+}
+
+h1 {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Cosi Azure";
+    font-size: 70px;
+    
+}
+/* .header__bg {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;  
+  }
+  .header__bg video {
+    position: absolute;  
+    top: 50%; 
+    left: 50%;  
+    width: 120%;  
+    height: 120%;  
+    transform: translate(-50%, -50%); 
+    object-fit: cover;  
+    opacity: 0.8;  
+    z-index: 0;  
+  }
+   */
+
+span {
+    color: #4d047b;
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 40%;
+    font-size: 90px;
+}
+
+.button {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.button a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 24px 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    transition: 0.1s;
+}
+
+.button:hover a {
+    background: #190333;
+    color: #138603;
+    transition: 0.3s;
+    transform: translateY(50%);
+    transition: 1s;
+    border-radius: 2px;
+    border-radius: 11px;
+
+}
+p{
+    text-align: center;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 600px;
+    font-size: 25px;
+    
+}
+
+/*code ajouter */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: #370243;
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+/* 2eme verssion de mon code  */
+
+/*
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #1d1d1e;
+    color: white;
+}
+
+.loading-screen {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    background-color: #4bedc2;
+    width: 0%;
+    height: 100%;
+}
+/* .title  { 
+    
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.1s; 
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); 
+    }
+    to {
+      opacity: 1;
+      transform: translateY(20p);
+    }
+  } */
+/* 
+
+.load-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+    pointer-events: none;
+}
+
+h1 {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Cosi Azure";
+    font-size: 70px;
+   
+}
+
+span {
+    color: #ad19f7;
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 10;
+    padding-left: 30%;
+}
+
+.button {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.button a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 24px 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    transition: 0.1s;
+    
+}
+
+.button:hover a {
+    background: white;
+    color: #ad19f7;
+    transition: 0.3s;
+    transform: translateY(50%);
+    transition: 2s;
+    
+}
+p{
+    text-align: center;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 600px;
+    font-size: 25px;
+    
+    
+}
+
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: rgb(156, 33, 245);
+    z-index: 105;
+}
+
+
+
+
+.loading-screen {
+    animation: hideElement 2s forwards; 
+}
+
+@keyframes hideElement {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  svg {
+    width: 55vw;
+    height: 55vw;
+    animation: rotate linear 300s infinite;
+    z-index: -1000;
+  }
+
+  svg text {
+    font-size: 30px;
+    fill: rgba(110, 109, 109, 0.288);
+  }
+
+  body {
+    height: 100vh;
+    margin: 0;
+    background: #161616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+  }
+
+
+ */
+
+
+   

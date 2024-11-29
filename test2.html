@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planète Scroll</title>
+<style>
+    /* Réinitialisation de base */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Conteneur principal pour la planète */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, #000 40%, #0f1112 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Style de la planète */
+/* Style amélioré pour une planète réaliste */
+.planet {
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle at 30% 30%, #8e44ad, #140238, #000); /* Lumière et ombre */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.2s ease-out, background 0.3s ease-in-out;
+    box-shadow: 
+        0 0 40px rgba(128, 0, 128, 0.6),  /* Halo violet autour */
+        inset -30px -30px 40px rgba(0, 0, 0, 0.8),  /* Ombre interne */
+        inset 20px 20px 60px rgba(58, 57, 57, 0.2); /* Lumière subtile */
+    overflow: hidden;
+}
+
+/* Texture simulée (nuages) */
+.planet::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1), transparent 50%), 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05), transparent 70%);
+    border-radius: 50%;
+    animation: clouds 30s infinite linear;
+    z-index: 2;
+}
+
+/* Texture animée */
+@keyframes clouds {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ajout d'étoiles en arrière-plan */
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, #000, #001d3d 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+   
+    background-size: 3px 3px, 1px 1px;
+    background-position: 0 0, 50% 50%;
+}
+
+/* Section de contenu */
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    margin-top: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom, transparent 80%, black);
+}
+
+</style></head>
+<body>
+    <div class="container">
+        <div class="planet"></div>
+    </div>
+    <div class="content">
+        <h1>Bienvenue</h1>
+        <p>Actuellement étudiant à HETIC Paris en prépa master digitale, je suis titulaire d'un diplôme de Technicien Spécialisé en Développement web, obtenu après deux années de formation.
+
+            Je suis un passionné de technologie et de développement informatique. J'ai eu l'occasion de participer bénévolement à trois projets informatiques et un stage où j'ai pu mettre en pratique mes compétences en développement full-stack. Ces expériences m'ont permis de renforcer mes capacités en gestion de projets, travail en équipe, et innovation technique.
+            
+            Originaire du Maroc, je parle l'arabe, le français, l'anglais et allemand, et j'aspire à évoluer vers un poste de CTO pour accompagner les entreprises dans leurs stratégies technologiques.
+            
+            " Je prévois de poursuivre un master pour me spécialiser en tant que Tech Lead et CTO, en intégrant des solutions digitales performantes et durables dans divers secteurs."</p>
+        <div style="height: 200vh;"></div>
+    </div>
+<script>
+    const planet = document.querySelector('.planet');
+const container = document.querySelector('.container');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Calcul de la progression du défilement (0 à 1)
+    const progress = Math.min(scrollY / windowHeight, 1);
+
+    // Ajuster la taille et la position de la planète
+    const scale = 1 + progress; // Augmente progressivement
+    const translateY = -progress * windowHeight; // Monte vers le haut
+
+    // Appliquer les transformations
+    planet.style.transform = `translateY(${translateY}px) scale(${scale})`;
+});
+
+</script>
+</body>
+</html>

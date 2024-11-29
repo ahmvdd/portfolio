@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Compétences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #6d38ea;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #864caf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #6a399e;
+            transform: scale(1.1);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Crée deux colonnes */
+            gap: 20px; /* Espacement entre les compétences */
+            padding: 20px;
+        }
+
+        .skill-item {
+            background-color: #1a1a1a; /* Couleur de fond de la carte */
+            border-radius: 10px; /* Coins arrondis */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre portée */
+            padding: 20px; /* Espacement interne */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'effet de survol */
+            color: #fff;
+            text-align: center; /* Centre le texte dans chaque élément */
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px); /* Légère élévation au survol */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée au survol */
+        }
+
+        .skill-icon {
+            font-size: 24px;
+            display: block; /* Met l'icône sur une nouvelle ligne */
+            margin-bottom: 5px; /* Ajoute de l'espacement entre l'icône et la description */
+        }
+
+        img:nth-of-type(1) {
+            position: absolute;
+            top: 10%;
+            right: 88%;
+            transform: translateY(-50%);
+            width: 150px;
+            animation: float 35s linear infinite;
+        }
+
+        img:nth-of-type(2) {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 150px;
+            animation: float2 35s linear infinite;
+        }
+
+        @keyframes float2 {
+            0% {
+                transform: translatex(0); /* Position de départ */
+            }
+            50% {
+                transform: translatey(20px); /* Descend de 20px */
+            }
+            100% {
+                transform: translatex(0); /* Retour à la position de départ */
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem; /* Réduire la taille du titre sur petits écrans */
+            }
+
+            .back-button {
+                font-size: 14px; /* Réduire la taille du bouton sur petits écrans */
+                padding: 8px 16px;
+                margin-left: 10%; /* Ajuster le padding du bouton */
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Grille plus compacte */
+                gap: 10px; /* Réduire l'espacement sur petits écrans */
+            }
+
+            .skill-item {
+                display: inline-block; /* Réduire le padding interne sur petits écrans */
+            }
+
+            .skill-icon {
+                font-size: 20px; /* Réduire la taille de l'icône sur petits écrans */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .back-button {
+                font-size: 12px; /* Réduire encore la taille du bouton pour les très petits écrans */
+                padding: 6px 12px; /* Ajuster le padding du bouton */
+            }
+
+            h1 {
+                font-size: 1.2rem; /* Réduire encore la taille du titre pour les très petits écrans */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="img/astronote.png" alt=""> -->
+    <h1>Mes Compétences</h1>
+    <button class="back-button"><a href="home.html" style="color: white; text-decoration: none;">Retour</a></button>
+    <div class="skills-container">
+        <div class="skill-item">
+            <span class="skill-icon">🌐</span>
+            <span class="skill-description">support</span>
+        </div>
+        
+        <div class="skill-item">
+            <span class="skill-icon">🛠️</span>
+            <span class="skill-description">Résolution de Problèmes</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">📊</span>
+            <span class="skill-description">Microsoft office</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">🎨</span>
+            <span class="skill-description">Design Graphique</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">📧</span>
+            <span class="skill-description">Gestion des Emails</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">🗂️</span>
+            <span class="skill-description">Gestion de Projets (Trello, Asana)</span>
+        </div>
+    </div>
+</body>
+</html>
