@@ -118,6 +118,7 @@ span {
     letter-spacing: 4px;
     font-size: 10px;
     transition: 0.1s;
+    border: 1px solid wheat;
 }
 
 .button:hover a {
