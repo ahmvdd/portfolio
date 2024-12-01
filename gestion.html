@@ -1,29 +1,92 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Compétences en Gestion d'Équipe</title>
+    <title>Selective Focus</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
-            color: #6d38ea;
+        * {
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            color: #901dee;
+        }
+
+        .top, .footer {
+            background: #000000;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         h1 {
-            margin-bottom: 20px;
+            font-size: 100px;
+            text-align: center;
+            color: #fff;
+            font-family: inter, sans-serif;
+            font-weight: bold;
+        }
+        
+        h2 {    
+            font-size: 50px;
+            text-align: center;
+            color: #fff;
+            font-family: inter, sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Transition de couleur */
         }
 
+
+        .main {
+            padding: 60px;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Prevent overflow of images */
+        }
+
+        .filled-text {
+            position: absolute;
+            z-index: 1;
+            font-size: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: transform 0.5s ease; /* Smooth transform */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, 0); /* Adjust to center */
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: inter, sans-serif;
+            font-weight: bold;
+        }
+
+        img {
+            position: absolute;
+            max-width: 40%; 
+            height: auto;
+            transition: transform 0.3s ease; /* Smooth transform for images */
+            left: 50%; /* Center image horizontally */
+            transform: translate(-50%, 0); /* Adjust to center */
+        }
+        
         .back-button {
             position: absolute;
             top: 20px;
             right: 20px;
             padding: 10px 20px;
-            background-color: #864caf;
+            background-color: #260d38;
             color: white;
             border: none;
             border-radius: 5px;
@@ -37,137 +100,76 @@
             background-color: #6a399e;
             transform: scale(1.1);
         }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Crée deux colonnes */
-            gap: 20px; /* Espacement entre les compétences */
-            padding: 20px;
-        }
-
-        .skill-item {
-            background-color: #1a1a1a; /* Couleur de fond de la carte */
-            border-radius: 10px; /* Coins arrondis */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre portée */
-            padding: 20px; /* Espacement interne */
-            transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'effet de survol */
-            color: #fff;
-            text-align: center; /* Centre le texte dans chaque élément */
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px); /* Légère élévation au survol */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée au survol */
-        }
-
-        .skill-icon {
-            font-size: 24px;
-            display: block; /* Met l'icône sur une nouvelle ligne */
-            margin-bottom: 5px; /* Ajoute de l'espacement entre l'icône et la description */
-        }
-
-        img:nth-of-type(1) {
-            position: absolute;
-            top: 10%;
-            right: 88%;
-            transform: translateY(-50%);
-            width: 150px;
-            animation: float 35s linear infinite;
-        }
-
-        img:nth-of-type(2) {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            width: 150px;
-            animation: float2 35s linear infinite;
-        }
-
-        @keyframes float2 {
-            0% {
-                transform: translatex(0); /* Position de départ */
-            }
-            50% {
-                transform: translatey(20px); /* Descend de 20px */
-            }
-            100% {
-                transform: translatex(0); /* Retour à la position de départ */
-            }
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem; /* Réduire la taille du titre sur petits écrans */
-            }
-
-            .back-button {
-                font-size: 14px; /* Réduire la taille du bouton sur petits écrans */
-                padding: 8px 16px;
-                margin-left: 10%; /* Ajuster le padding du bouton */
-            }
-
-            .skills-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Grille plus compacte */
-                gap: 10px; /* Réduire l'espacement sur petits écrans */
-            }
-
-            .skill-item {
-                display: inline-block; /* Réduire le padding interne sur petits écrans */
-            }
-
-            .skill-icon {
-                font-size: 20px; /* Réduire la taille de l'icône sur petits écrans */
-            }
-        }
-
-        @media (max-width: 400px) {
-            .back-button {
-                font-size: 12px; /* Réduire encore la taille du bouton pour les très petits écrans */
-                padding: 6px 12px; /* Ajuster le padding du bouton */
-            }
-
-            h1 {
-                font-size: 1.2rem; /* Réduire encore la taille du titre pour les très petits écrans */
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- <img src="img/pluto.png" alt=""> -->
-    <h1>Mes Compétences en Gestion d'Équipe</h1>
+    <section class="top">
+        <h1>Quelques-uns de mes projets</h1>
+    </section>
     <button class="back-button"><a href="home.html" style="color: white; text-decoration: none;">Retour</a></button>
-    <div class="skills-container">
-        <div class="skill-item">
-            <span class="skill-icon">👥</span>
-            <span class="skill-description">Leadership</span>
+
+    <section class="main">
+        <div class="container">
+            <h2 class="filled-text">Application web de communication</h2>
+            <img class="image" src="img/rr.png" alt="Selective Focus Image 1">
         </div>
-        <div class="skill-item">
-            <span class="skill-icon">🗣️</span>
-            <span class="skill-description">Communication</span>
+    </section>
+
+    <section class="main">
+        <div class="container">
+            <h2 class="filled-text">Site web e-commerce</h2>
+            <img class="image" src="img/ss.png" alt="Selective Focus Image 2">
         </div>
-        <div class="skill-item">
-            <span class="skill-icon">📅</span>
-            <span class="skill-description">Planification</span>
+    </section>
+
+    <section class="main">
+        <div class="container">
+            <h2 class="filled-text">Application de Suivi de Fitness</h2>
+            <img class="image" src="img/Cardiio-Rythme-Cardiaque.png" alt="Selective Focus Image 3">
         </div>
-        <div class="skill-item">
-            <span class="skill-icon">⚖️</span>
-            <span class="skill-description">Gestion des Conflits</span>
-        </div>
-        <div class="skill-item">
-            <span class="skill-icon">🤝</span>
-            <span class="skill-description">Collaboration</span>
-        </div>
-        <div class="skill-item">
-            <span class="skill-icon">📊</span>
-            <span class="skill-description">Analyse des Performances</span>
-        </div>
-        <div class="skill-item">
-            <span class="skill-icon">🔧</span>
-            <span class="skill-description">Gestion de Projets</span>
-        </div>
-        <div class="skill-item">
-            <span class="skill-icon">📈</span>
-            <span class="skill-description">Évaluation et Feedback</span>
-        </div>
-    </div>
+    </section>
+
+    <section class="footer">
+        <h2>Pour plus d'infos contactez-moi !!</h2>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+    <script type="text/javascript">
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate filled text
+        gsap.utils.toArray(".filled-text").forEach((text) => {
+            gsap.from(text, {
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top 80%", // Animation starts when the top of the text is 20% from the bottom of the viewport
+                    end: "bottom top",
+                    scrub: 1,
+                },
+                y: -50, // Move up by 50px
+                opacity: 0, // Start invisible
+                ease: "power2.out",
+            });
+        });
+
+        // Animate images
+        gsap.utils.toArray(".image").forEach((img) => {
+            gsap.from(img, {
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 80%", // Animation starts when the top of the image is 20% from the bottom of the viewport
+                    end: "bottom top",
+                    scrub: 1,
+                    markers: false // Hide markers
+                },
+                x: 250, // Move right
+                scale: 1, // Start at normal size
+                opacity: 0, // Start invisible
+                ease: "power2.out",
+            });
+        });
+    </script>
 </body>
 </html>
