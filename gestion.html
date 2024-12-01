@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selective Focus</title>
+    <title>Projets</title>
     <style>
         * {
             margin: 0;
@@ -27,6 +27,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 20px; /* Espacement à gauche et à droite */
         }
 
         h1 {
@@ -35,6 +36,7 @@
             color: #fff;
             font-family: inter, sans-serif;
             font-weight: bold;
+            margin: 0 20px; /* Ajout de marges à gauche et à droite */
         }
         
         h2 {    
@@ -44,41 +46,34 @@
             font-family: inter, sans-serif;
             font-weight: bold;
             transition: color 0.3s ease; /* Transition de couleur */
+            margin: 0 20px 20px 20px; /* Ajout de marges à gauche, droite et en bas */
         }
 
-
         .main {
-            padding: 60px;
-            height: 100vh;
-            position: relative;
+            padding: 20px; /* Réduire le padding pour les petites tailles d'écran */
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Colonne pour aligner verticalement */
+            align-items: center; /* Centrer horizontalement */
             justify-content: center;
-            overflow: hidden; /* Prevent overflow of images */
         }
 
         .filled-text {
-            position: absolute;
             z-index: 1;
-            font-size: 50px;
+            font-size: 30px; /* Réduire la taille pour les petites tailles d'écran */
             font-weight: 600;
             text-align: center;
-            transition: transform 0.5s ease; /* Smooth transform */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, 0); /* Adjust to center */
             color: #ffffff;
             text-transform: uppercase;
             font-family: inter, sans-serif;
             font-weight: bold;
+            margin: 0 20px; /* Ajout de marges à gauche et à droite */
         }
 
         img {
-            position: absolute;
-            max-width: 40%; 
+            max-width: 90%; /* Ajuster la largeur max pour les petits écrans */
             height: auto;
             transition: transform 0.3s ease; /* Smooth transform for images */
-            left: 50%; /* Center image horizontally */
-            transform: translate(-50%, 0); /* Adjust to center */
+            margin-bottom: 20px; /* Ajout d'une marge inférieure entre les images et le texte */
         }
         
         .back-button {
@@ -94,11 +89,34 @@
             font-size: 16px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: background 0.3s, transform 0.3s;
+            margin: 0 20px; /* Ajout de marges à gauche et à droite */
         }
 
         .back-button:hover {
             background-color: #6a399e;
             transform: scale(1.1);
+        }
+
+        
+        @media (max-width: 600px) {
+            /* *{
+                overflow-x: hidden;
+            } */
+            h1 {
+                font-size: 50px; 
+            }
+
+            h2 {
+                font-size: 30px; 
+            }
+
+            .filled-text {
+                font-size: 20px; 
+            }
+
+            .main {
+                padding: 40% 10% 5% 10%;
+            }
         }
     </style>
 </head>
